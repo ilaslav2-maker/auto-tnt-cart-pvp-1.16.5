@@ -14,6 +14,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: 7.3.3
+          cache-disabled: true
       - name: Build with Gradle
         run: gradle build
       - name: Upload Artifact

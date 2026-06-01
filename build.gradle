@@ -14,13 +14,18 @@ java {
 
 repositories {
     mavenCentral()
+    // Официальные репозитории библиотек игры
     maven { url = 'https://minecraft.net' }
+    maven { url = 'https://minecraftforge.net' }
 }
 
 dependencies {
-    // Подтягиваем библиотеки ввода и сети самого Майнкрафта
+    // Подтягиваем библиотеки ввода, сети и сам Майнкрафт как донорскую базу для компиляции
     implementation 'org.lwjgl:lwjgl-glfw:3.2.2'
     implementation 'io.netty:netty-all:4.1.25.Final'
+    
+    // Прямая ссылка на официальный клиент игры для проверки классов компилятором
+    compileOnly 'com.mojang:minecraft:1.16.5'
 }
 
 jar {

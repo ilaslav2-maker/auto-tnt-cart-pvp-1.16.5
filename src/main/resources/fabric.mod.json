@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "tntmacro",
+  "version": "1.0.0",
+  "name": "TNT Macro",
+  "description": "Packet TNT Macro for 1.16.5 Fabric",
+  "authors": ["AI"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.example.tntmacro.TntMacro"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}

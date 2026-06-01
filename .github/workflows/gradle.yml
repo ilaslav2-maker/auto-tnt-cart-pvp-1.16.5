@@ -10,13 +10,13 @@ jobs:
         with:
           java-version: '8'
           distribution: 'temurin'
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: 7.3.3
-          cache-disabled: true
+      - name: Install Gradle
+        run: |
+          wget https://gradle.org
+          sudo unzip -d /opt/gradle gradle-7.3.3-bin.zip
+          echo "/opt/gradle/gradle-7.3.3/bin" >> $GITHUB_PATH
       - name: Build with Gradle
-        run: gradle build
+        run: gradle build --no-daemon
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
